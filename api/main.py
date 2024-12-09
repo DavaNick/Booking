@@ -310,6 +310,7 @@ async def admin_florintini(request: Request, username: str = Form(...), password
         raise HTTPException(status_code=401, detail="Invalid credentials")
 
 
+
 @app.post("/six_floor-admin", response_class=HTMLResponse)
 async def admin_six_floor(request: Request, username: str = Form(...), password: str = Form(...)):
     if username == "six" and password == "six378":
