@@ -1,0 +1,90 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+  <head> 
+    <meta charset="UTF-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
+    <title>Shine on Hover</title> 
+    <style>
+        * { 
+  padding: 0; 
+  margin: 0; 
+} 
+ 
+body { 
+    background: linear-gradient(60deg, black, dodgerblue), 
+    url(https://images.pexels.com/photos/2166927/pexels-photo-2166927.jpeg?cs=srgb&dl=animal-aquarium-aquatic-2166927.jpg&fm=jpg) 
+      no-repeat center center/cover; 
+  font-family: Arial, Helvetica, sans-serif; 
+} 
+ 
+.container { 
+  display: flex; 
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh;
+} 
+ 
+a { 
+  font-size: 1.5rem; 
+  padding: 1rem 3rem; 
+  color: #f4f4f4; 
+  text-transform: uppercase; 
+} 
+ 
+.btn { 
+  text-decoration: none; 
+  border: 1px solid rgb(146, 148, 248); 
+  position: relative; 
+  overflow: hidden; 
+} 
+ 
+.btn:hover { 
+  box-shadow: 1px 1px 25px 10px rgba(146, 148, 248, 0.4); 
+} 
+ 
+.btn:before { 
+  content: ""; 
+  position: absolute; 
+  top: 0; 
+  left: -100%; 
+  width: 100%; 
+  height: 100%; 
+  background: linear-gradient( 
+    120deg, 
+    transparent, 
+    rgba(146, 148, 248, 0.4), 
+    transparent 
+  ); 
+  transition: all 650ms; 
+} 
+ 
+.btn:hover:before { 
+  left: 100%; 
+}
+
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+}
+
+.title{
+    color: white;
+    margin-bottom: 50px;
+}
+    </style>
+  </head> 
+  <body> 
+    <div class="container"> 
+        <h1 class="title">Просмотр заказов в ресторанах</h1>
+        <div class="wrapper">
+        <a href="baratie-go" class="btn">Baratie</a> 
+        <a href="florintini-go" class="btn">Florentini</a> 
+        <a href="six_floor-go" class="btn">Six-floor</a> 
+        </div>
+    </div> 
+  </body> 
+</html>

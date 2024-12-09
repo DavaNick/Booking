@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users Information</title>
+    <style>
+        body{
+            background:linear-gradient(45deg, black, dodgerblue);
+            height: 100vh;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        tr {
+            background-color: white;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #6ac746;
+        }
+
+        tr:nth-child(even) {
+            background-color: white;
+        }
+
+        .btn{
+            padding: 5px 10px;
+            background-color: red;
+            border-radius: 7px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Записи в ресторан Baratie:</h1>
+    <table>
+        <tr>
+            <th>Имя</th>
+            <th>Номер стола</th>
+            <th>Дата</th>
+            <th>Время</th>
+            <th>Количество гостей</th>
+            <th>Действие</th>
+        </tr>
+        {% for reservation in reservation %}
+        <tr>
+            <td>{{ reservation.user_name }}</td>
+            <td>{{ reservation.table_number }}</td>
+            <td>{{ reservation.reservation_date }}</td>
+            <td>{{ reservation.reservation_time }}</td>
+            <td>{{ reservation.guests_count }}</td>
+            <td><button class="btn" onclick="deleteRecord(this, '{{ reservation.id }}'.replace(/-/g, ''))">Удалить</button></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <script>
+        function deleteRecord(button, id) {
+    fetch('/reservation/delete/' + id, {
+        method: 'DELETE'
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            var row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        } else {
+            alert('Error deleting record');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Error deleting record');
+    });
+}
+    </script>
+</body>
+</html>

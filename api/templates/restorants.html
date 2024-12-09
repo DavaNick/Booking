@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма для ресторана</title>
+</head>
+<body style="text-align: center;" >
+    <h1>Добавить новый ресторан</h1>
+    <form id="restaurantForm">
+        <label for="name">Название ресторана:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="address">Адрес ресторана:</label><br>
+        <input type="text" id="address" name="address"><br><br>
+        <input type="button" value="Отправить" onclick="submitForm()">
+    </form>
+
+    <script>
+        function submitForm() {
+            const form = document.getElementById('restaurantForm');
+            const formData = {
+                name: form.name.value,
+                address: form.address.value
+            };
+
+            fetch('/restaurant', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(formData)
+})
+            
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                alert('Ресторан успешно зарегистрирован!');
+            })
+            .catch(error => {
+                console.error('Произошла ошибка:', error);
+                alert('Произошла ошибка при регистрации ресторана');
+            });
+        }
+    </script>
+</body>
+</html>

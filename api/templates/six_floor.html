@@ -1,0 +1,426 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>Поле выбора времени</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://htmlacademy.ru/assets/course74/keksik-style.css">
+  <link rel="stylesheet" href="https://libs.cdnjs.net/font-awesome/6.5.1/css/all.css">
+  <style>
+    form {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #cccccc;
+}
+body {
+            margin: 0;
+            padding: 0;
+            background:linear-gradient(45deg, black, dodgerblue);
+            height: 100vh;
+        }
+
+        nav { 
+            margin: 27px auto 0; 
+            
+            position: relative; 
+            width: 590px; 
+            height: 50px; 
+            border-radius: 8px; 
+            font-size: 0; 
+}
+
+nav a{
+line-height: 50px; 
+  height: 100%; 
+  font-size: 15px; 
+  display: inline-block; 
+  position: relative; 
+  z-index: 1; 
+  text-decoration: none; 
+  text-transform: uppercase; 
+  text-align: center; 
+  font-weight: bolder;
+  color: black;
+  cursor: pointer; 
+} 
+nav .animation { 
+  position: absolute; 
+  height: 100%; 
+  top: 0; 
+  z-index: 0; 
+  transition: all .5s ease 0s; 
+  border-radius: 8px; 
+} 
+a:nth-child(1) { 
+  width: 100px; 
+} 
+a:nth-child(2) { 
+  width: 110px; 
+} 
+a:nth-child(3) { 
+  width: 100px; 
+} 
+a:nth-child(4) { 
+  width: 160px; 
+} 
+a:nth-child(5) { 
+  width: 120px; 
+} 
+nav .start-home, a:nth-child(1):hover~.animation { 
+  width: 100px; 
+  left: 0; 
+  background-color: #1abc9c; 
+} 
+nav .start-about, a:nth-child(2):hover~.animation { 
+  width: 110px; 
+  left: 100px; 
+  background-color: #e74c3c; 
+} 
+nav .start-blog, a:nth-child(3):hover~.animation { 
+  width: 100px; 
+  left: 210px; 
+  background-color: #3498db; 
+} 
+nav .start-portefolio, a:nth-child(4):hover~.animation { 
+  width: 160px; 
+  left: 310px; 
+  background-color: #9b59b6; 
+} 
+nav .start-contact, a:nth-child(5):hover~.animation { 
+  width: 120px; 
+  left: 470px; 
+  background-color: #e67e22; 
+} 
+ 
+h1 { 
+    display: flex;
+  text-align: center; 
+  margin: 40px 0 40px; 
+  text-align: center; 
+  font-size: 30px; 
+  color: rgb(255, 255, 255); 
+  font-size: 50px;
+  text-shadow: 2px 2px 4px #000000; 
+  font-family: 'Cherry Swash', cursive; 
+}
+
+.registration-button{
+            display: flex;
+            align-items: center;
+        }
+
+        .admika-button{
+            display: flex;
+            align-items: center; 
+            margin-left:20px ;
+        }
+        
+        .admika-button a{
+            color:rgb(0, 238, 255);
+            text-decoration: none;
+            object-fit: cover;
+            padding: 5px 10px;
+            border: 2px solid rgb(0, 238, 255);
+            border-radius: 5px;
+            font-size: 30px;
+        }
+
+        .registration-button a {
+            color:rgb(0, 238, 255);
+            text-decoration: none;
+            object-fit: cover;
+            padding: 5px 10px;
+            border: 2px solid rgb(0, 238, 255);
+            border-radius: 5px;
+            font-size: 30px;
+        }
+    .name{
+    display: flex;
+    color: #ffffff;
+    font-size: 27px;
+    font-weight: bolder;
+    width: 10%;
+}
+
+.span-name{
+    font-size: 30px; 
+  color: rgb(255, 255, 255); 
+  font-size: 50px;
+  text-shadow: 2px 2px 4px #000000; 
+  font-family: 'Cherry Swash', cursive;
+}
+
+.nav-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+
+.main{
+  display: flex;
+  justify-content: center;
+}
+
+.aside{
+  display: flex;
+  justify-content: center;
+  width: 1200px;
+  height: 600px;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.img-wrapper{
+  width: 1000px;
+}
+
+input,
+textarea {
+    width: 95%;
+    margin-bottom: 10px;
+    padding: 2px 5px;
+    font-family: "Roboto", sans-serif;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+input {
+    height: 24px;
+}
+
+input[type="submit"] { 
+    display: inline-block;
+    width: auto;
+    height: auto;
+    margin: 0 5px;
+    padding: 6px 15px;
+    color: #ffffff;
+    background: #2c3e50;
+    border: none;
+    border-radius: 5px;
+}
+
+.half-width {
+    display: inline-block;
+    width: 50%;
+    margin-right: -4px;
+}
+
+.half-width input {
+    width: 80%;
+}
+
+.buttons {
+    margin-top: 10px;
+    text-align: center;
+}
+footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 30px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .cabinetik{
+    font-size: 28px;
+    font-weight: bolder;
+    color: #fff;
+}
+  </style>
+</head>
+
+<body>
+    <div class="nav-wrapper">
+    <h1>КладMEN</h1>  
+<nav> 
+    <a href="/">Главная</a> 
+    <a href="select">Admin</a> 
+    <a href="https://t.me/gestrest">Новости</a> 
+    <a href="#">История</a> 
+    <a href="#">Контакты</a> 
+  <div class="animation start-home"></div> 
+</nav> 
+<div class="registration-button">
+    {% for user in users %}
+    <span class="cabinetik" >{{ user.name }} {{ user.surname }} </span>
+    {% endfor %}
+</div>
+</div>
+  <main class="main">
+    <aside class="aside">
+      <div class="img-wrapper">
+        <img src="/static/six-floor.jpg" alt="">
+      </div>
+      <form id="reservationForm" class="form">
+        <span id="allTrue" class="True"></span>
+        <label>Имя гостя</label>
+        <div class="inputBox">
+            <input type="text" id="guest_name" name="guest_name" required>
+            <label>Номер стола</label>
+            <span id="guestNameError" class="error"></span>
+        </div>
+    
+        <div class="inputBox">
+            <input type="number" id="table_number" name="table_number" min="1" max="7" required>
+            <label>Дата бронирования </label>
+            <span id="tableNumberError" class="error"></span>
+        </div>
+    
+        <div class="inputBox">
+            <input  type="text" id="date" name="date" placeholder="YYYY-MM-DD" required>
+            <i>Время бронирования (в формате 00:00)</i>
+            <span id="dateError" class="error"></span>
+        </div>
+    
+        <div class="inputBox">
+            <input type="text" id="time" name="time" placeholder="00:00" required>
+            <i>Количество гостей</i>
+            <span id="timeError" class="error"></span>
+        </div>
+    
+        <div class="inputBox">
+            <input type="number" id="guests_count" name="guests_count" min="1" max="7" required>
+            <label>Пожелания</label>
+            <span id="guestsCountError" class="error"></span>
+        </div>
+    
+        <div class="inputBox">
+            <textarea id="special_requests" name="special_requests" rows="4" required></textarea>
+            <span id="specialRequestsError" class="error"></span>
+        </div>
+    
+        <input type="hidden" id="user_id" value="Ваш_реальный_user_id">
+         {% for user in users %}
+        <p id="userId" style="opacity: 0;">{{ user.id }}</p>
+        {% endfor %}
+        <div class="inputBox">
+            <div class="reg__wrapper">
+                <button type="submit" id="reserve" class="btn btn--save">Забронировать</button>
+                <a href="/"><button type="button" id="goToMainPage" class="btn btn--go">Перейти на главную</button></a>
+            </div>
+        </div>
+    
+    </form>
+  </main>
+  <script>
+      class ReservationCreate {
+          constructor(user_name, user_id, restaurant_id, table_number, reservation_date, reservation_time, guests_count = 1, special_requests = null) {
+              this.user_name = user_name;
+              this.user_id = user_id;
+              this.restaurant_id = restaurant_id;
+              this.table_number = table_number;
+              this.reservation_date = new Date(reservation_date);
+              this.reservation_time = reservation_time;
+              this.guests_count = guests_count;
+              this.special_requests = special_requests;
+          }
+  
+          validate_user_name() {
+            if (this.user_name.length < 3 || !/^[a-zA-Zа-яА-Я]+$/.test(this.user_name)) {
+                throw new Error("Имя пользователя должно содержать минимум 3 буквы и не содержать цифры.");
+            }
+        }
+  
+          validate_table_number() {
+              if (this.table_number < 1 || this.table_number > 7) {
+                  throw new Error("Номер стола должен быть от 1 до 7.");
+              }
+          }
+  
+          validate_guests_count() {
+              if (this.guests_count < 1 || this.guests_count > 6) {
+                  throw new Error("Количество гостей должно быть от 1 до 6.");
+              }
+          }
+  
+          validate_reservation_date() {
+              if (this.reservation_date < new Date()) {
+                  throw new Error("Дата резервации не может быть раньше сегодняшней даты.");
+              }
+          }
+  
+          validate_reservation_time() {
+      if (!/^\d{2}:\d{2}$/.test(this.reservation_time)) {
+          throw new Error("Некорректный формат времени. Введите время в формате ЧЧ:ММ.");
+      }
+  
+      const [hours, minutes] = this.reservation_time.split(':').map(Number);
+      if (!(0 <= hours && hours < 24 && 0 <= minutes && minutes < 60)) {
+          throw new Error("Некорректный формат времени.");
+      }
+  }
+  
+          validate_special_requests() {
+              if (this.special_requests && this.special_requests.length > 170) {
+                  throw new Error("Пожелание не должно превышать 170 символов.");
+              }
+          }
+      }
+  
+  
+      document.getElementById('reservationForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+  
+      const user_name = document.getElementById('guest_name').value;
+      const table_number = parseInt(document.getElementById('table_number').value);
+      const reservation_date = document.getElementById('date').value;
+      const reservation_time = document.getElementById('time').value;
+      const guests_count = parseInt(document.getElementById('guests_count').value);
+      const special_requests = document.getElementById('special_requests').value;
+      
+      // Получение user_id из элемента <p>
+      const user_id = document.getElementById('userId').textContent.trim();
+      
+      const restaurant_id = '30bb66205ebd40f8adb92b4870897444'; // Строгое значение айди ресторана
+  
+      const newReservation = new ReservationCreate(user_name, user_id, restaurant_id, table_number, reservation_date, reservation_time, guests_count, special_requests);
+  
+          let message = '';
+  
+          try {
+              newReservation.validate_user_name();
+              newReservation.validate_table_number();
+              newReservation.validate_guests_count();
+              newReservation.validate_reservation_date();
+              newReservation.validate_reservation_time();
+              newReservation.validate_special_requests();
+              
+              message = 'Форма заполнена корректно';
+  
+              // Отправляем данные на сервер
+              fetch('/reservation', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(newReservation)
+              })
+              .then(response => response.json())
+              .then(data => {
+                  console.log(data); // Обработка ответа от сервера
+              })
+              .catch(error => {
+                  console.error('Ошибка:', error); // Вывод ошибки в консоль
+              });
+  
+          } catch (error) {
+              message = 'Ошибка: ' + error.message;
+          }
+          
+          document.getElementById('allTrue').textContent = message;
+      });
+  </script>
+    
+  </body>  
+  </html>
